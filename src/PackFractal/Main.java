@@ -34,9 +34,9 @@ public class Main {
                 System.out.println("Forma escolhida: " + (idForma == 1 ?
                         FormaGeometricaEnum.CIRCULO.toString() : FormaGeometricaEnum.QUADRADO.toString()));
                 System.out.println("Informe o tamanho inicial " +
-                        (idForma == 1 ? "do raio " : "do lado ") + "de 10 a 100 (px): ");
+                        (idForma == 1 ? "do diametro " : "do lado ") + "de 10 a 60 (px): ");
                 int tamanho = scanner.nextInt();
-                System.out.println("Informe a quantidade de interações 1 a 20: ");
+                System.out.println("Informe a quantidade de interações de 1 a 15: ");
                 int interacoes = scanner.nextInt();
                 Fractal f = new Fractal(tamanho, interacoes,
                         (idForma == 1 ? FormaGeometricaEnum.CIRCULO : FormaGeometricaEnum.QUADRADO));
@@ -46,6 +46,7 @@ public class Main {
                 System.out.println((e.getClass().equals(InputMismatchException.class) ? "Erro ao converter dados!" : e.getMessage()) );
             }
             scanner.close();
+            System.out.println("Finalizando programa...");
             try {
                 Thread.sleep(3000);
             } catch (InterruptedException e) {
