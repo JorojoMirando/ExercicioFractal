@@ -75,12 +75,16 @@ public class Fractal {
         }
         if(f.forma.is(FormaGeometricaEnum.QUADRADO) && camadas > 3) {
             for (int camada = 4; camada <= camadas; camada++ ){
-                if (camada % 2 == 0)
+                if (camada % 2 != 0)
                     desenho = " stroke=\"black\" stroke-width=\"0\" fill=\"black\"/>";
                 else
                     desenho = " stroke=\"blue\" stroke-width=\"2\" fill=\"white\"/>";
-                String posicao = GeraInteriorQuadrado(f.tamanho, camada);
-                gravarSaida.printf(geometrico + posicao + tamanho + desenho);
+                String[] listPosicao = GeraInteriorQuadrado(f.tamanho, camada);
+                if (camada % 2 != 0) {
+                    for (String posicao: listPosicao) {
+                        //gravarSaida.printf(geometrico + posicao + tamanho + desenho);
+                    }
+                }
             }
         }
         gravarSaida.printf("\n</svg>");
@@ -101,14 +105,21 @@ public class Fractal {
             return coordenada ? " x=\"" + (posicao + tamanho * 2) + "\"" : " y=\"" + (posicao + tamanho * 2) + "\"";
     }
 
-    private static String GeraInteriorQuadrado(int tamanho, int camada) {
+    private static String[] GeraInteriorQuadrado(int tamanho, int camada) {
         int total = 0;
-        if (camada % 2 == 1) {
-             total = tamanho * camada * 2;
+        String[] listPosicao;
+        if (camada % 2 != 0) { // quadrados pretos
+            listPosicao = new String[camada / 2];
+            total = tamanho + camada * tamanho + 1;
         }
+        else { // quadrados brancos
+            listPosicao = new String[camada / 2];
+            total = tamanho + (camada * tamanho) * 10 + 1;
+        }
+        for (int i = 1; i < camada / 2; i++)
+            listPosicao[i] = " x=\"" + (total - tamanho) + "\" y=\"" + (camada * (tamanho *i)+ 1) + "\"";
 
-
-                return " x=\"" + (total + 1) + "\" y=\"" + (total + 1)  + "\"";
+        return listPosicao;
 
 
     }

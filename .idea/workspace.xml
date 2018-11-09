@@ -8,6 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1009b035-7333-47c1-9c60-738db4fb033a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ExercicioFractal_jar/ExercicioFractal.jar" afterPath="$PROJECT_DIR$/out/artifacts/ExercicioFractal_jar/ExercicioFractal.jar" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExercicioFractal/PackFractal/Fractal.class" afterPath="$PROJECT_DIR$/out/production/ExercicioFractal/PackFractal/Fractal.class" />
       <change beforePath="$PROJECT_DIR$/saida_fractal.svg" afterPath="$PROJECT_DIR$/saida_fractal.svg" />
       <change beforePath="$PROJECT_DIR$/src/PackFractal/Fractal.java" afterPath="$PROJECT_DIR$/src/PackFractal/Fractal.java" />
     </list>
@@ -43,13 +45,12 @@
       <file leaf-file-name="Fractal.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/PackFractal/Fractal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="75" column="69" lean-forward="false" selection-start-line="75" selection-start-column="69" selection-end-line="75" selection-end-column="69" />
+            <state relative-caret-position="-278">
+              <caret line="84" column="26" lean-forward="false" selection-start-line="84" selection-start-column="26" selection-end-line="84" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#GeraCentro#0;class#Fractal#0" expanded="false" />
                 <element signature="method#GeraPontasQuadrado#0;class#Fractal#0" expanded="false" />
-                <element signature="method#GeraInteriorQuadrado#0;class#Fractal#0" expanded="false" />
                 <element signature="method#GeraPontasCirculo#0;class#Fractal#0" expanded="false" />
               </folding>
             </state>
@@ -242,7 +243,7 @@
       <workItem from="1541618168938" duration="850000" />
       <workItem from="1541677677508" duration="16098000" />
       <workItem from="1541704184934" duration="1328000" />
-      <workItem from="1541764262882" duration="19950000" />
+      <workItem from="1541764262882" duration="23976000" />
     </task>
     <task id="LOCAL-00001" summary="Faltando incluir geraçao do interior dos quadrados e a curvatura para os círculos.">
       <created>1541700375544</created>
@@ -251,11 +252,18 @@
       <option name="project" value="LOCAL" />
       <updated>1541700375544</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Faltando incluir geração do interior dos quadrados.&#10;&#10;Curvatura para os círculos concluída.">
+      <created>1541786908153</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1541786908153</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38569000" />
+    <option name="totallyTimeSpent" value="42595000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -269,7 +277,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -280,7 +288,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39969134" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39969134" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -298,13 +306,19 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Faltando incluir geraçao do interior dos quadrados e a curvatura para os círculos." />
-    <option name="LAST_COMMIT_MESSAGE" value="Faltando incluir geraçao do interior dos quadrados e a curvatura para os círculos." />
+    <MESSAGE value="Faltando incluir geração do interior dos quadrados.&#10;&#10;Curvatura para os círculos concluída." />
+    <option name="LAST_COMMIT_MESSAGE" value="Faltando incluir geração do interior dos quadrados.&#10;&#10;Curvatura para os círculos concluída." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="9" />
+      <option name="time" value="12" />
     </breakpoint-manager>
-    <watches-manager />
+    <watches-manager>
+      <configuration name="JarApplication">
+        <watch expression="camada % 2" />
+        <watch expression="camada / 2" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/PackFractal/Main.java">
@@ -325,7 +339,6 @@
             <element signature="imports" expanded="true" />
             <element signature="method#GeraCentro#0;class#Fractal#0" expanded="false" />
             <element signature="method#GeraPontasQuadrado#0;class#Fractal#0" expanded="false" />
-            <element signature="method#GeraInteriorQuadrado#0;class#Fractal#0" expanded="false" />
             <element signature="method#GeraPontasCirculo#0;class#Fractal#0" expanded="false" />
           </folding>
         </state>
@@ -349,7 +362,6 @@
             <element signature="imports" expanded="true" />
             <element signature="method#GeraCentro#0;class#Fractal#0" expanded="false" />
             <element signature="method#GeraPontasQuadrado#0;class#Fractal#0" expanded="false" />
-            <element signature="method#GeraInteriorQuadrado#0;class#Fractal#0" expanded="false" />
             <element signature="method#GeraPontasCirculo#0;class#Fractal#0" expanded="false" />
           </folding>
         </state>
@@ -373,7 +385,6 @@
             <element signature="imports" expanded="true" />
             <element signature="method#GeraCentro#0;class#Fractal#0" expanded="false" />
             <element signature="method#GeraPontasQuadrado#0;class#Fractal#0" expanded="false" />
-            <element signature="method#GeraInteriorQuadrado#0;class#Fractal#0" expanded="false" />
             <element signature="method#GeraPontasCirculo#0;class#Fractal#0" expanded="false" />
           </folding>
         </state>
@@ -405,7 +416,6 @@
             <element signature="imports" expanded="true" />
             <element signature="method#GeraCentro#0;class#Fractal#0" expanded="false" />
             <element signature="method#GeraPontasQuadrado#0;class#Fractal#0" expanded="false" />
-            <element signature="method#GeraInteriorQuadrado#0;class#Fractal#0" expanded="false" />
             <element signature="method#GeraPontasCirculo#0;class#Fractal#0" expanded="false" />
           </folding>
         </state>
@@ -454,13 +464,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PackFractal/Fractal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="75" column="69" lean-forward="false" selection-start-line="75" selection-start-column="69" selection-end-line="75" selection-end-column="69" />
+        <state relative-caret-position="-278">
+          <caret line="84" column="26" lean-forward="false" selection-start-line="84" selection-start-column="26" selection-end-line="84" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#GeraCentro#0;class#Fractal#0" expanded="false" />
             <element signature="method#GeraPontasQuadrado#0;class#Fractal#0" expanded="false" />
-            <element signature="method#GeraInteriorQuadrado#0;class#Fractal#0" expanded="false" />
             <element signature="method#GeraPontasCirculo#0;class#Fractal#0" expanded="false" />
           </folding>
         </state>
