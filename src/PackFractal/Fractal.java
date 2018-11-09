@@ -15,13 +15,20 @@ public class Fractal {
     }
 
     public static void GeraArquivoSVG(Fractal f) throws Exception {
+        if (f.tamanho < 10 || f.tamanho > 60)
+            throw new Exception("Tamanho inválido.");
+        if (f.interacoes < 1 || f.interacoes > 15)
+            throw new Exception("Número de interações inválido.");
+
         FileWriter saida = new FileWriter("saida_fractal.svg");
         PrintWriter gravarSaida = new PrintWriter(saida);
-        gravarSaida.printf("<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"" + (f.tamanho * f.interacoes * 2) +
-                "\" height=\"" + (f.tamanho * f.interacoes * 2) + "\" version=\"1.1\">");
+        double tamanhoTela = ((f.forma.is(FormaGeometricaEnum.QUADRADO) ? f.tamanho : f.tamanho / 1.3)
+                * f.interacoes * 2);
+        gravarSaida.printf("<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"" + tamanhoTela +
+                "\" height=\"" + tamanhoTela + "\" version=\"1.1\">");
 
         String geometrico = "\n\t", posxInicial, posyInicial, tamanho,
-                desenho = " stroke=\"black\" stroke-width=\"1\" fill=\"black\"/>";
+                desenho = " stroke=\"black\" stroke-width=\"0\" fill=\"blue\"/>";
         int px, py;
         if (f.forma == FormaGeometricaEnum.CIRCULO) {
             geometrico += "<circle";
@@ -49,23 +56,30 @@ public class Fractal {
                 desenho = " stroke=\"black\" stroke-width=\"0\" fill=\"black\"/>";
             else
                 desenho = " stroke=\"blue\" stroke-width=\"2\" fill=\"white\"/>";
-            posx = GeraPontas(px, f.tamanho * camadas, f.forma, true);
-            gravarSaida.printf(geometrico + posx + posyInicial + tamanho + desenho);
-            posy = GeraPontas(py, f.tamanho * camadas, f.forma, false);
-            gravarSaida.printf(geometrico + posxInicial + posy + tamanho + desenho);
+            if(f.forma.is(FormaGeometricaEnum.QUADRADO)) {
+                posx = GeraPontasQuadrado(px, f.tamanho * camadas, true);
+                gravarSaida.printf(geometrico + posx + posyInicial + tamanho + desenho);
+                posy = GeraPontasQuadrado(py, f.tamanho * camadas, false);
+                gravarSaida.printf(geometrico + posxInicial + posy + tamanho + desenho);
+            }
+            else {
+                posx = GeraPontasCirculo(px, f.tamanho * camadas, camadas, f.interacoes, true);
+                gravarSaida.printf(geometrico + posx + tamanho + desenho);
+                posy = GeraPontasCirculo(px, f.tamanho * camadas, camadas, f.interacoes, false);
+                gravarSaida.printf(geometrico + posy + tamanho + desenho);
+            }
             posx = GeraCentro(px, f.tamanho * camadas, f.forma, true);
             posy = GeraCentro(py, f.tamanho * camadas, f.forma, false);
             gravarSaida.printf(geometrico + posx + posy + tamanho + desenho);
             camadas++;
         }
         if(f.forma.is(FormaGeometricaEnum.QUADRADO) && camadas > 3) {
-
             for (int camada = 4; camada <= camadas; camada++ ){
                 if (camada % 2 == 0)
                     desenho = " stroke=\"black\" stroke-width=\"0\" fill=\"black\"/>";
                 else
                     desenho = " stroke=\"blue\" stroke-width=\"2\" fill=\"white\"/>";
-                String posicao = GeraInterior(f.tamanho, camada);
+                String posicao = GeraInteriorQuadrado(f.tamanho, camada);
                 gravarSaida.printf(geometrico + posicao + tamanho + desenho);
             }
         }
@@ -73,6 +87,7 @@ public class Fractal {
         gravarSaida.close();
         saida.close();
         System.out.println("Arquivo Gerado.");
+        System.out.println(System.getProperties().getProperty("user.dir") + "\\saida_fractal.svg");
     }
 
     private static String GeraCentro(int posicao, int tamanho, FormaGeometricaEnum forma, boolean coordenada){
@@ -82,15 +97,26 @@ public class Fractal {
             return coordenada ? " x=\"" + (posicao + tamanho) + "\"" : " y=\"" + (posicao + tamanho) + "\"";
     }
 
-    private static String GeraPontas(int posicao, int tamanho, FormaGeometricaEnum forma, boolean coordenada){
-        if(forma.is(FormaGeometricaEnum.CIRCULO))
-            return coordenada ? " cx=\"" + (posicao + tamanho * 1.5) + "\"" : " cy=\"" + (posicao + tamanho * 1.5) + "\"";
-        else
+    private static String GeraPontasQuadrado(int posicao, int tamanho, boolean coordenada){
             return coordenada ? " x=\"" + (posicao + tamanho * 2) + "\"" : " y=\"" + (posicao + tamanho * 2) + "\"";
     }
 
-    private static String GeraInterior(int tamanho, int camada){
+    private static String GeraInteriorQuadrado(int tamanho, int camada) {
+        int total = 0;
+        if (camada % 2 == 1) {
+             total = tamanho * camada * 2;
+        }
 
-        return " x=\"" + tamanho + "\" y=\"" + camada + "\"";
+
+                return " x=\"" + (total + 1) + "\" y=\"" + (total + 1)  + "\"";
+
+
+    }
+
+    private static String GeraPontasCirculo(int posicao, int tamanho, int camada, int interacao, boolean coordenada) {
+        double curvatura = (1 + ((camada * camada) * (interacao * 0.01)));
+        double multiplicador = 1.5;
+        return coordenada ? " cx=\"" + (posicao + tamanho * multiplicador) + "\"" + " cy=\"" + posicao * curvatura + "\"" :
+                " cx=\"" + posicao * curvatura + "\"" + " cy=\"" + (posicao + tamanho * multiplicador) + "\"";
     }
 }
